@@ -8,7 +8,12 @@ class ImageParser
 {
     public function parseAlibabaExpressImages($url)
     {
-        phpQuery::newDocument(file_get_contents($url));
+        return $this->parseAlibabaExpressImagesFromContent(file_get_contents($url));
+    }
+
+    public function parseAlibabaExpressImagesFromContent($content)
+    {
+        phpQuery::newDocument($content);
         /** @var DOMElement[] $value */
         $value = pq('html')->find('img');
         $images = [];
@@ -19,6 +24,6 @@ class ImageParser
             $images[] = $src;
         }
 
-        return $images;
+        return array_filter($images);
     }
 }
