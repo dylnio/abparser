@@ -1,0 +1,21 @@
+{
+  "name": "dylnio/alibaba",
+  "description": "Alibaba image parser",
+  "require": {
+    "electrolinux/phpquery": "dev-master"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8"
+  },
+  "authors": [
+    {
+      "name": "Bill Yildirim",
+      "email": "bill@dyln.io"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Dyln\\": "src/Dyln"
+    }
+  }
+}
